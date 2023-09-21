@@ -2,25 +2,22 @@
 //
 
 #include <iostream>
+#include "Game.h"
 
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Game Simple;    
+
+    while (Simple.IsCreate()) { // 무한루프를 돌려서 창이 바로 꺼지지 않고 유지되게 해줌
+
+        
+
+        // Window.clear(sf::Color(100, 100, 100, 255));
+        Window.clear(sf::Color::Magenta);
+
+        Window.display();
+
+    }
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

@@ -54,4 +54,18 @@ https://www.sfml-dev.org/download/sfml/2.6.0/
   sfml-network.lib 
 ```
 
+# Event 
 
+## Event 종류
+- 사건, 상황의 변화 
+- Interface와 연관햇서 생기는 상황의 변화 
+- 키보드, 마우스로 생기는 상황의 변화 
+    - 키보드 이벤트 : 키 입력 => 키 입력
+    - 마우스 이벤트 : 마우스 클릭(Press / Release) , 휠 스크롤, 움직임
+- 터치 스크린 : 터치, 스와이프, 핀치
+- 로딩 
+
+## Event Handling
+
+- Event Delegate
+- Event Listening
