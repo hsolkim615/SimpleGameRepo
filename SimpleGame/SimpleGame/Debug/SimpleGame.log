@@ -1,3 +1,2 @@
 ﻿  SimpleGame.cpp
-C:\Users\user\SimpleGameRepo\SimpleGame\SimpleGame\SimpleGame.cpp(17,9): error C2065: 'Window': undeclared identifier
-C:\Users\user\SimpleGameRepo\SimpleGame\SimpleGame\SimpleGame.cpp(19,9): error C2065: 'Window': undeclared identifier
+  SimpleGame.vcxproj -> C:\Users\user\SimpleGameRepo\SimpleGame\Debug\SimpleGame.exe

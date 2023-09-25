@@ -31,7 +31,7 @@ const bool Game::IsCreate()
 void Game::ExecEvent()
 {
     while (this->Window->pollEvent(this->Event)) {
-
+            
         switch (this->Event.type)
         {
         case sf::Event::Closed:
