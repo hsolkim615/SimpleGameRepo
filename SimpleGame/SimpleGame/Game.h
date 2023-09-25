@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
@@ -10,7 +11,6 @@
 
 using namespace sf;
 using namespace std;
-
 
 class Game
 {
@@ -34,28 +34,64 @@ private:
 	* Enemy
 	*/
 	RectangleShape RectEnemy;
+	vector<RectangleShape> RectEnemies;
+
+	// Spawn Value
+	float EnemySpawnTime;
+	float EnemySpawnTimeMax;
+	int EnemyMaxNumber;
+
+	// Set Spawn Value 
+	void SetSpawnValue();
+
+	// Init RectEnemy
+	void InitRectEnemy();
+
+	/*
+	* Player
+	*/
+
+	CircleShape Player;
+
+	// Init Player
+	void InitPlayer();
+
 
 public:
-	/* 
+	/*
 	* 생성자 & 소멸자
 	*/
 	Game();
 	~Game();
 
-
 	/*
-	* Enemy
+	* Enenmy
 	*/
 
+	// Spawn Enemy
+	void SpawnEnemy();
 
+	void UpdateEnemy();
 
+	/*
+	* Player
+	*/
+
+	void UpdatePlayer();
+
+	/*
+	* Collision
+	*/
+
+	void UpdateCollision();
+
+	void GameOver();
 
 	/*
 	* Game Loop
 	*/
 
-
-	// 앞 const : 반환 값이 변경되지 않음
+	// 앞 const : 반환값이 변경되지 않음
 	// 뒤 const : 매개변수, 함수 내부 값이 변경되지 않음
 	const bool Running() const;
 
@@ -64,5 +100,4 @@ public:
 	void Update();
 
 	void Render();
-
 };

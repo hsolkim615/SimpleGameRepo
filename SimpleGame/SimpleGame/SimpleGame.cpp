@@ -2,23 +2,27 @@
 //
 
 #include <iostream>
+#include <ctime>
 
-// #include "SimpleGame.h"
+//#include "SimpleGame.h"
 #include "Game.h"
 
 int main()
 {
+    srand(time(NULL));
+
     Game SimpleGame;
 
     // Game Loop
-	while (SimpleGame.Running())
-	{
+    while (SimpleGame.Running())
+    {
 
-		SimpleGame.EventHandler();
+        SimpleGame.EventHandler();
 
-		SimpleGame.Update();
+        SimpleGame.Update();
 
-		SimpleGame.Render();
-				
-	}
+        SimpleGame.Render();
+
+    }
+
 }

@@ -9,15 +9,18 @@
 using namespace sf;
 using namespace std;
 
-void SimpleWindow() {
+void SimpleWindow()
+{
 	// 윈도우 창 생성
-	RenderWindow Window(VideoMode(1024,768), "Simple Game", Style::Titlebar | Style::Close);
+	RenderWindow Window(VideoMode(1024, 768), "Simple Game", Style::Titlebar | Style::Close);
 
 	Event e;
 
-	while (Window.isOpen()) { // isOpen() : Window Open 여부 확인 => true
+	while (Window.isOpen()) // isOpen() : Window Open 여부 확인 => true
+	{
 		// Close 버튼을 클릭 Event 감지 => Window Close
-		while (Window.pollEvent(e)) { // Event 감지
+		while (Window.pollEvent(e)) // Event 감지
+		{
 			// Event type 구분
 			switch (e.type)
 			{
@@ -25,8 +28,7 @@ void SimpleWindow() {
 				Window.close();
 				break;
 			}
-		} 
+		}
 	}
-
 
 }
