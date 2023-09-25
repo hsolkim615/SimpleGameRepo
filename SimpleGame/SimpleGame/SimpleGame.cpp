@@ -2,11 +2,23 @@
 //
 
 #include <iostream>
-#include "Game.h"
 
+// #include "SimpleGame.h"
+#include "Game.h"
 
 int main()
 {
-    
+    Game SimpleGame;
 
+    // Game Loop
+	while (SimpleGame.Running())
+	{
+
+		SimpleGame.EventHandler();
+
+		SimpleGame.Update();
+
+		SimpleGame.Render();
+				
+	}
 }

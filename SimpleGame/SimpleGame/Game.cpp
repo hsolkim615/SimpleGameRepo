@@ -1,49 +1,48 @@
 #include "Game.h"
 
-void Game::InitVariable() // 변수값 초기화
+Game::Game()
 {
-	// nullptr : 주소값이 없는 상태 -> 아무것도 가리키지 않는 상태
-	this->Window = nullptr; // Window포인터 초기화 
-}
-
-void Game::InitWindow() // 윈도우창 설정
-{
-	this->VMode.width = 1024;
-	this->VMode.height = 768;
-	this->Window = new sf::RenderWindow(this->VMode, "Simple Game", sf::Style::Titlebar | sf::Style::Close);
-}
-
-Game::Game() // 생성자, 변수 및 원도우창 설정 함수들 실행
-{
-	this->InitVariable();
 	this->InitWindow();
+	this->InitWindowPointer();
 }
 
-Game::~Game() // 소멸자
+Game::~Game()
 {
+	this->DeleteWindow();
 }
 
-const bool Game::IsCreate()
+void Game::InitWindowPointer()
+{
+	this->Window = nullptr;
+}
+
+void Game::InitWindow()
+{
+	// int* a = enw int(3);
+	this->Window = new RenderWindow(VideoMode(1024, 768), "Simple Game", Style::Titlebar | Style::Close);
+}
+
+void Game::DeleteWindow()
+{
+	delete this->Window;
+}
+
+const bool Game::Running() const
 {
 	return this->Window->isOpen();
 }
 
-void Game::ExecEvent()
+void Game::EventHandler()
 {
-    while (this->Window->pollEvent(this->Event)) {
-            
-        switch (this->Event.type)
-        {
-        case sf::Event::Closed:
-            this->Window->close();
-            break;
-        case sf::Event::KeyPressed:
-            if (Event.key.code == sf::Keyboard::Escape) { //  ESC누르면 창이 종료
-                this->Window->close();
-            }
-            break;
-        }
-    }
+	while (this->Window->pollEvent(e)) 
+	{ 		
+		switch (e.type)
+		{
+		case Event::Closed: 
+			this->Window->close();
+			break;
+		}
+	}
 }
 
 void Game::Update()

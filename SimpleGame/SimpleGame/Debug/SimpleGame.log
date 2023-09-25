@@ -1,2 +1,4 @@
-﻿  SimpleGame.cpp
+﻿  Game.cpp
+  SimpleWindow.cpp
+  Generating Code...
   SimpleGame.vcxproj -> C:\Users\user\SimpleGameRepo\SimpleGame\Debug\SimpleGame.exe
